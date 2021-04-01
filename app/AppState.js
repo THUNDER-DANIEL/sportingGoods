@@ -12,6 +12,8 @@ class AppState extends EventEmitter {
 
   /**@type{Carts[]} */
   carts = []
+
+  total = 0
 }
 
 

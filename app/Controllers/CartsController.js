@@ -6,13 +6,15 @@ import { cartsService } from "../Services/CartsService.js";
 function _draw() {
   let carts = ProxyState.carts;
   let template = ''
+  let total= 0
 
 
 //   Goes and gets all the items in the items in the ProxyState / App state
   carts.forEach(s => template += s.cartTemplate)
   document.getElementById("cart").innerHTML = template
 
- 
+ carts.forEach(s => total += s.price)
+ document.getElementById("total").innerHTML = total
   
 }
 
@@ -23,10 +25,9 @@ export default class CartsController {
     _draw()
   }
 
-  addCart(item) {
-    cartsService.addCart(item)
+  addCart(item,num) {
+    cartsService.addCart(item,num)
   }
-
 
 
 }

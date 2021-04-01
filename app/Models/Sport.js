@@ -16,7 +16,7 @@ export default class Sport {
             <h5 class="card-title">${this.name}</h5>
             <p class="card-text">${this.description}<BR> PRICE:$ ${this.price}</p>
            <p>Qty:${this.stock}</p>
-            <a href="#" class="btn btn-primary" onclick="app.cartsController.addCart('${this.name}')">Add to cart</a>
+            <a href="#" class="btn btn-primary" onclick="app.cartsController.addCart('${this.name}',${this.price})">Add to cart</a>
           </div>
         </div>
       </div>
@@ -24,12 +24,8 @@ export default class Sport {
     }
     get cartTemplate(){
       return /*html*/`
-      <div class="card">
-        <h5 class="card-header">Cart</h5>
-        <div class="card-body">
-        <h5 class="card-title">${this.name}</h5>
-        </div>
-        <a href="#" class="btn btn-primary">Checkout</a>
-      </div>`
+      <p class="card-title">${this.name} $${this.price}</p>
+\
+      `
     }
   }
